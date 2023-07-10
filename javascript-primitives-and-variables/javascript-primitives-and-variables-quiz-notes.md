@@ -9,7 +9,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - How do you **declare** a variable?
   variables are declared using keywords: let, var, or const
 - How do you initialize (**assign a value to**) a variable?
-  with the assignment operator (=)
+  with the keyword (let or const), variable name, assignment operator (=), and data being assigned to the variable
 - What characters are allowed in variable names?
   letters, digits, $, or \_ but the first character cannot be a digit
 - What does it mean to say that variable names are "case sensitive"?
