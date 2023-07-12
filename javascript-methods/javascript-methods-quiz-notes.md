@@ -9,7 +9,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What is a method?
   a function which is a property of an object
 - How is a method different from any other function?
-  it has built-in tasks that are performed by an object instance
+  a method is associated with an object
 - How do you remove the last element from an array?
   pop() method
 - How do you round a number down to the nearest integer?
@@ -19,11 +19,11 @@ After completing this exercise, you should be able to discuss or answer the foll
 - How do you delete an element from an array?
   pop(), shift(), splice() all remove elements from an array
 - How do you append an element to an array?
-  push() and unshift() appends elements to an array
+  push() appends and unshift() prepends elements to an array
 - How do you break a string up into an array?
   split() method
 - Do string methods change the original string? How would you check if you weren't sure?
-  yes, the split() method divides the original string into substrings and puts them into an array
+  no they do not, strings are immutable, they create new strings
   this can be checked by logging it to the console
 - Roughly how many string methods are there according to the MDN Web docs?
   about 39
