@@ -71,5 +71,7 @@ function recommendMovie(genre) {
       return 'Pitch Perfect';
     case 'sci-fi':
       return 'Interstellar';
+    default:
+      return 'Genre not recognized. Choose between action, comedy, horror, drama, musical, or sci-fi';
   }
 }
