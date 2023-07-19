@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+.button {
+  font-size: 20px;
+  padding: 10px 30px;
+}
+
+.button:hover {
+  background-color: black;
+  color: white;
+}
+
+th {
+  color: white;
+  background-color: black;
+}
+
+tr:nth-child(odd) {
+  background-color: lightgrey;
+}
