@@ -10,13 +10,14 @@
 .button:hover {
   background-color: black;
   color: white;
+  cursor: pointer;
 }
 
-th {
+table.striped thead > tr {
   color: white;
   background-color: black;
 }
 
-tr:nth-child(odd) {
+table.striped tbody > tr:nth-child(odd) {
   background-color: lightgrey;
 }
