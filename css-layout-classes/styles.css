@@ -24,3 +24,7 @@ img {
 .column-two-thirds {
   flex-basis: 66%;
 }
+
+.column-full {
+  flex-basis: 100%;
+}
