@@ -14,7 +14,7 @@ h2 {
 }
 
 fieldset {
-  border: 1;
+  border: 0;
 }
 
 input,
@@ -63,4 +63,5 @@ button {
   height: 2rem;
   color: white;
   background-color: rgb(236, 93, 88);
+  border: none;
 }
