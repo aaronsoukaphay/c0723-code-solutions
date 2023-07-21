@@ -5,9 +5,6 @@ div {
 
 h2 {
   font-family: 'Brandon Grotesque', sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  src: url('BrandonGrotesque-Medium.woff2') format('woff2');
   text-align: center;
   color: rgb(236, 93, 88);
   letter-spacing: 0.1rem;
@@ -31,18 +28,12 @@ select {
 
 input::placeholder {
   font-family: AtlasGrotesk, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  src: url('AtlasGrotesk-Light-Web.woff2') format('woff2');
   font-size: 1rem;
 }
 
 .label {
   text-align: left;
   font-family: 'Brandon Grotesque', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  src: url('BrandonGrotesque-Regular.woff2') format('woff2');
   font-size: 0.75rem;
   padding-bottom: 0.5rem;
   padding-top: 0.5rem;
@@ -54,9 +45,6 @@ input::placeholder {
 
 button {
   font-family: 'Brandon Grotesque', sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  src: url('BrandonGrotesque-Regular.woff2') format('woff2');
   border-radius: 30px;
   padding: 0.5 rem;
   width: 5.25rem;
