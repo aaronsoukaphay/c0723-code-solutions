@@ -11,7 +11,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - Which "document" is being referred to in the phrase Document Object Model?
   the html document
 - What is the word "object" referring to in the phrase Document Object Model?
-  it represents all page content as objects that can be modified
+  it represents each individual element that makes up the DOM tree
 - What is a DOM Tree?
   a diagram of html document tags in the html document
 - Give two examples of `document` methods that retrieve a single element from the DOM.
@@ -19,7 +19,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - Give one example of a `document` method that retrieves multiple elements from the DOM at once.
   document.querySelectorAll()
 - Why might you want to assign the return value of a DOM query to a variable?
-  you can use a for loop to loop through the results
+  you can use a for loop to loop through the results and allows us to reuse that variable and modify it
 - What `console` method allows you to inspect the properties of a DOM element object?
   console.dir()
 - Why would a `<script>` tag need to be placed at the bottom of the HTML content instead of at the top?
