@@ -7,7 +7,6 @@ $lightBulb.addEventListener('click', handleClick);
 
 function handleClick(event) {
   numberOfClicks++;
-  console.log(numberOfClicks);
   if (numberOfClicks % 2 === 0) {
     $lightBulb.className = 'light-bulb ' + 'bright';
     $row.className = 'row ' + 'bright';
