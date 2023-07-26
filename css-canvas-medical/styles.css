@@ -36,6 +36,7 @@
   margin-top: 0.5rem;
   color: #c0c0c0;
   font-family: Avenir, sans-serif;
+  font-size: 0.75rem;
 }
 
 .header-column-one-fifth-box {
@@ -47,6 +48,7 @@
   border-radius: 0.25rem;
   border-color: #0a4265;
   background-color: #0a4265;
+  font-size: 0.75rem;
 }
 
 .header-column-one-fifth-box p {
@@ -56,60 +58,180 @@
 }
 
 .column-full-banner {
-  display: flex;
-  margin-top: 3rem;
+  margin-top: 2.5rem;
+}
+
+.banner-container {
+  margin: 0 auto;
 }
 
 .banner {
-  width: 1032px;
-  height: 500px;
+  width: 48.25rem;
+  height: 23rem;
   background-image: url('images/hero.jpg');
   background-size: cover;
+  background-position: center center;
   position: relative;
-}
-
-.banner > img {
-  width: 100%;
 }
 
 .banner-title {
   position: absolute;
-  top: 90px;
+  top: 30px;
   left: 60px;
-  right: 550px;
+  right: 350px;
   color: rgb(255, 255, 255);
   font-weight: lighter;
+  font-size: 1.75rem;
 }
 
 .banner-text {
   position: absolute;
-  top: 180px;
+  top: 120px;
   left: 60px;
-  right: 500px;
-  line-height: 1.5rem;
+  right: 350px;
+  line-height: 1.25rem;
   color: rgb(255, 255, 255);
   font-family: Avenir, sans-serif;
+  font-size: 0.75rem;
 }
 
 .banner-footer {
   position: absolute;
-  bottom: 35px;
+  bottom: 25px;
   left: 60px;
   color: rgb(255, 255, 255);
   border: solid;
   border-color: #0a4265;
   background-color: #0a4265;
-  font-size: larger;
-  padding: 0.6rem 2.5rem;
+  font-size: regular;
+  padding: 0.5rem 2.4rem;
   font-family: Avenir, sans-serif;
   border-radius: 0.25rem;
 }
 
 .overlay {
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  background: linear-gradient(transparent, rgba(0.5, 0.5, 0.5, 0.5));
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
+}
+
+.container-second {
+  max-width: 100%;
+  margin: 0 5%;
+}
+
+.column-full-locations {
+  flex-basis: 100%;
+  text-align: center;
+  background-color: #fafafa;
+  margin-top: 3rem;
+  padding-top: 2rem;
+}
+
+.column-full-locations h2 {
+  font-family: 'Tiempos Headline', sans-serif;
+  color: #6e6e6e;
+}
+
+.column-full-locations p {
+  font-family: Avenir, sans-serif;
+  color: #6e6e6e;
+  margin: 0 28%;
+  font-size: 0.8rem;
+}
+
+.column-one-half-locations {
+  flex-basis: 50%;
+  text-align: center;
+  background-color: #fafafa;
+  color: #6e6e6e;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  font-family: Avenir, sans-serif;
+  font-size: smaller;
+}
+
+.column-one-half-locations p {
+  padding: 0.25rem 0;
+}
+
+.column-one-third {
+  flex-basis: calc(100% / 3);
+  text-align: center;
+  margin-top: 0.75rem;
+  color: #6e6e6e;
+}
+
+.column-one-third h3 {
+  font-family: 'Tiempos Headline', sans-serif;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.04rem;
+}
+
+.column-one-third p {
+  font-family: Avenir, sans-serif;
+  font-size: 0.75rem;
+  margin-right: 1.58rem;
+}
+
+.column-one-third-button {
+  flex-basis: calc(100% / 3);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-left: 4.5rem;
+}
+
+.column-one-third-button h4 {
+  font-family: Avenir, sans-serif;
+  border: solid;
+  border-color: #0a4265;
+  background-color: #0a4265;
+  border-radius: 0.25rem;
+  color: #d3d8df;
+  padding: 0.5rem 1.5rem;
+  text-align: center;
+  font-size: smaller;
+}
+
+.column-one-fourth {
+  flex-basis: calc(100% / 4);
+  color: white;
+  background-color: #525351;
+  margin-top: 1rem;
+  padding-bottom: 3rem;
+}
+
+.column-one-fourth h3 {
+  font-family: Avenir, sans-serif;
+  margin-top: 28%;
+  font-size: small;
+  line-height: 2rem;
+}
+
+.column-one-fourth h1 {
+  font-family: 'Tiempos Headline', sans-serif;
+  margin-left: 25%;
+  margin-top: 25%;
+}
+
+.column-one-fourth p {
+  font-family: Avenir, sans-serif;
+  margin-left: 25%;
+  font-size: x-small;
+  line-height: 1.2rem;
+}
+
+.column-one-fifth-footer {
+  flex-basis: calc(100% / 5);
+  text-align: center;
+  color: #6e6e6e;
+  font-family: Avenir, sans-serif;
+  font-size: small;
+  padding: 2rem 0;
+  background-color: #fafafa;
 }

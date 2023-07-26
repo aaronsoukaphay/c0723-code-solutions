@@ -20,11 +20,11 @@ After completing this exercise, you should be able to discuss or answer the foll
   it is the element that is being interacted with, you can check it in the console.log or mdn
 - What is the difference between these two snippets of code?
   `js
-  element.addEventListener('click', handleClick)
-  `
+element.addEventListener('click', handleClick)
+`
   `js
-  element.addEventListener('click', handleClick())
-  `
+element.addEventListener('click', handleClick())
+`
   in the top one, it is passing a reference to the function, do this in a callback function
   in the bottom one, the function is being called directly, do not do this in a callback function
 
