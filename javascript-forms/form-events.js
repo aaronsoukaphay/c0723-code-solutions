@@ -12,9 +12,6 @@ function handleInput(event) {
   console.log('value of name:', event.target.value);
 }
 
-const $formControls = document.querySelector('#contact-form').elements;
-console.log($formControls);
-
 const $userName = document.querySelector('#user-name');
 
 $userName.addEventListener('focus', handleFocus);
