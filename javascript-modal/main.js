@@ -1,18 +1,17 @@
-const $modal = document.querySelector('.modal');
-const $overlay = document.querySelector('.overlay');
-const $openModalBtn = document.querySelector('.btn-open');
-const $closeModalBtn = document.querySelector('.btn-close');
+const $modalContainer = document.querySelector('.modal-container');
 
-$openModalBtn.addEventListener('click', openModal);
+const $btnOpen = document.querySelector('.btn-open');
+
+$btnOpen.addEventListener('click', openModal);
 
 function openModal(event) {
-  $modal.className = 'modal';
-  $overlay.className = 'overlay';
+  $modalContainer.className = 'modal-container';
 }
 
-$closeModalBtn.addEventListener('click', closeModal);
+const $btnClose = document.querySelector('.btn-close');
+
+$btnClose.addEventListener('click', closeModal);
 
 function closeModal(event) {
-  $modal.className = 'modal ' + 'hide';
-  $overlay.className = 'overlay ' + 'hide';
+  $modalContainer.className = 'modal-container ' + 'hidden';
 }
