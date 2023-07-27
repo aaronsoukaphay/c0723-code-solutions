@@ -10,6 +10,6 @@ function keyDown(event) {
     $span[i + 1].className = 'underline';
     i++;
   } else {
-    $span[i].className = 'red underline-red';
+    $span[i].className = 'red';
   }
 }

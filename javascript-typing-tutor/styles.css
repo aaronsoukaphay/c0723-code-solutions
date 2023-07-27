@@ -5,13 +5,15 @@ body {
 
 span {
   text-align: center;
-  font-family: sans-serif;
+  font-family: monospace;
   font-size: xx-large;
   font-weight: bolder;
+  padding-bottom: 0.5rem;
 }
 
 .underline {
-  border-bottom: solid;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
 }
 
 .green {
@@ -20,5 +22,7 @@ span {
 
 .red {
   color: red;
-  border-bottom: solid;
+  text-decoration: underline;
+  text-decoration-color: red;
+  text-underline-offset: 0.25em;
 }
