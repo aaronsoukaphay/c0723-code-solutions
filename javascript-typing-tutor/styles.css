@@ -10,10 +10,15 @@ span {
   font-weight: bolder;
 }
 
-.correct {
+.underline {
+  border-bottom: solid;
+}
+
+.green {
   color: lime;
 }
 
-.wrong {
+.red {
   color: red;
+  border-bottom: solid;
 }

@@ -1,14 +1,15 @@
 const $span = document.querySelectorAll('span');
-console.log($span);
 
 document.addEventListener('keydown', keyDown);
 
+let i = 0;
+
 function keyDown(event) {
-  let i = 0;
-  if (event.key === $span[i]) {
-    $span[i].className = 'correct';
+  if (event.key === $span[i].textContent) {
+    $span[i].className = 'green';
+    $span[i + 1].className = 'underline';
+    i++;
   } else {
-    $span[i].className = 'wrong';
+    $span[i].className = 'red underline-red';
   }
-  i++;
 }
