@@ -1,0 +1,28 @@
+body {
+  margin-top: 10rem;
+  text-align: center;
+}
+
+span {
+  text-align: center;
+  font-family: monospace;
+  font-size: xx-large;
+  font-weight: bolder;
+  padding-bottom: 0.5rem;
+}
+
+.underline {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.green {
+  color: lime;
+}
+
+.red {
+  color: red;
+  text-decoration: underline;
+  text-decoration-color: red;
+  text-underline-offset: 0.25em;
+}
