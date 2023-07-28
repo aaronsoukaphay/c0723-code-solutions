@@ -1,0 +1,43 @@
+.container {
+  max-width: 100%;
+}
+
+.inner-container {
+  margin: 0 5%;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column-fourth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.row-top {
+  flex-basis: 75%;
+}
+
+.row-middle {
+  flex-basis: calc(25% / 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.row-middle > img {
+  width: 30%;
+}
+
+.row-bottom {
+  text-align: center;
+}
+
+.text {
+  padding: 0.25rem 0;
+}
