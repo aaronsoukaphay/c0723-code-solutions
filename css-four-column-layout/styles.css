@@ -1,5 +1,10 @@
+* {
+  font-family: sans-serif;
+}
+
 .container {
   max-width: 100%;
+  background-color: rgb(247, 248, 250);
 }
 
 .inner-container {
