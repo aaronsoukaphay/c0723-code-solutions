@@ -1,9 +1,6 @@
 /* exported Shape */
 
 class Shape {
-  area;
-  perimeter;
-
   constructor(area, perimeter) {
     this.area = area;
     this.perimeter = perimeter;

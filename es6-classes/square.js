@@ -2,8 +2,6 @@
 /* exported Square */
 
 class Square extends Shape {
-  width;
-
   constructor(width) {
     super(width ** 2, width * 4);
     this.width = width;
