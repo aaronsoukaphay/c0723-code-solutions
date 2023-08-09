@@ -10,7 +10,7 @@ class Shape {
   }
 
   describe() {
-    return `The area is ${this.area} and the perimeter is ${this.perimeter}. The width is ${this.width}.`;
+    return `Area: ${this.area}, Perimeter: ${this.perimeter}`;
   }
 }
 

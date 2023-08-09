@@ -9,7 +9,7 @@ class Circle extends Shape {
   }
 
   describe() {
-    return `The area is ${this.area} and the perimeter is ${this.perimeter}. The radius is ${this.radius}.`;
+    return `${super.describe()}, Radius: ${this.radius}`;
   }
 }
 
