@@ -15,17 +15,15 @@ After completing this exercise, you should be able to discuss or answer the foll
   foo(() => 42);
   ```
   - Identify the arrow function
-    function foo () {
-    return 42
-    }
+    () => 42
   - How many arguments does the arrow function take?
     none
   - What value does it return?
     42
   - How many arguments are passed to the function `foo`?
-    none
+    one
   - What type of argument is passed to the function `foo`?
-    none
+    a callback function, which is the arrow function
 - In the expression
   ```js
   bar((y) => {
@@ -33,17 +31,15 @@ After completing this exercise, you should be able to discuss or answer the foll
   });
   ```
   - Identify the arrow function
-    function bar(y) {
-    console.log(`4y = ${4 * y}`)
-    }
+    (y) => {console.log(`4y = ${4 * y}`)}
   - How many arguments does the arrow function take?
     1
   - What value does it return?
-    nothing
+    undefined
   - How many arguments are passed to the function `bar`?
     1
   - What type of argument is passed to the function `bar`?
-    number
+    callback function
   - When does the arrow function's code get executed?
     when the bar function is called
 - How does the value of `this` differ between standard functions and arrow functions?
