@@ -8,10 +8,9 @@ After completing this exercise, you should be able to discuss or answer the foll
   - What does `Array.forEach` do?
     it executes a provided function for each element in the array
   - What should the callback function do?
-    log to the console
+    whatever action it chooses
   - What is `Array.forEach` useful for?
-    to perform an operation on each element of an array without the need to create a new array or alter the original array's structure
-    also to perform side effects like logging, updating external variables, or interacting with the DOM
+    any time you want to loop through array elements and performing an action
 - `Array.map`:
   - What does `Array.map` do?
     it creates a new array with the results of calling a provided functino on every element in the calling array
@@ -24,7 +23,7 @@ After completing this exercise, you should be able to discuss or answer the foll
   - What does `Array.filter` do?
     creates a shallow copy of a portion of a given array that pass the test implemented by the callback function
   - What should the callback function return?
-    boolean(true/false)
+    a truthy value to keep the element in the resulting array or a falsy value otherwise
   - What is `Array.filter` useful for?
     to selectively filter elements from an array based on certain criteria
 
