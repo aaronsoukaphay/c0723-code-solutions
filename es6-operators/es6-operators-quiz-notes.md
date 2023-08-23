@@ -5,6 +5,8 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What are the `&&` (logical AND) and `||` (logical OR) operators and how can they be used outside of `if` statements?
+  && returns first falsy value, if both true it returns right operand
+  || returns first truthy value, if both false,
   The logical AND operator returns true if both operands are truthy, otherwise it returns false.
   The logical OR operator returns true if at least one of the operands is truthy, otherwise it returns false. They can be used outside of if statements to build complex expressions that streamline code and make it more efficient and readable.
 - What is "short-circuit evaluation" and how does it apply to `&&` and `||`?
