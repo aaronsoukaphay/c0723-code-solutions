@@ -9,7 +9,8 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What is a React component?
   A piece of the UI that has its own logic and appearance
 - How do you mount a React app (root component) to the DOM?
-  ReactDOM.render(<App />, rootElement)
+  use the 'react-dom' package to create a root attached to an HTML element (usually a 'div')
+  call 'root.render()' and pass it the app's main component
 - What are some other popular frontend frameworks?
   Angular, Vue, Svelte, Preact, jQuery
 
