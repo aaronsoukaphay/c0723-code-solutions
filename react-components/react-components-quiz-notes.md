@@ -9,7 +9,8 @@ After completing this exercise, you should be able to discuss or answer the foll
 - How do you define a component in React?
   export the component with export default, define the function where first letter of function name is capital, and add HTML-like markup (JSX)
 - How is a component "rendered" (made visible on the browser page)?
-  React applications begin at a root component, which is what will be injected into the HTML document. React generates HTML automatically from react components, allowing the app to show content before the JavaScript code loads
+  The function is basically called like a normal function
+  ex. <CustomButton />
 
 ## Notes
 
