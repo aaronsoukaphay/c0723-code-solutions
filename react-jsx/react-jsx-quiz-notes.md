@@ -7,7 +7,8 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What is JSX?
   it is a syntax extension for javascript that lets you write HTML-like markup in a JavaScript file
 - How does React use JSX to render components?
-  curly braces are used inside the HTMl-like markup of JSX to open a window to JavaScript and access JavaScript values
+  JSX elements are used to make DOM calls that create, modify, and delete DOM elements
+  a React component returns a JSX element which represents how the DOM Dshould be structured
 
 ## Notes
 
