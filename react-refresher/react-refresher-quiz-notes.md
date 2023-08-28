@@ -5,13 +5,13 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - How do you define a React component?
-  a react component is one piece of the UI
+  a react component is a reusable piece of the UI
 - How do you use JSX in a React component?
   JSX is a syntax that lets you write HTML-like markup in javascript
 - How do you declare the props a React component needs?
   props are declared in the parent component
 - How do you pass props to a React component?
-  props are passed as HTML attributes in tags
+  props are passed as HTML attributes in the tag of the component
 - How do you include JavaScript expressions in JSX?
   wrapped in curly braces
 - What are React hooks and what are the three "Rules of Hooks"?
@@ -25,7 +25,8 @@ After completing this exercise, you should be able to discuss or answer the foll
   state variable keeps track of the value stored
   state setter function updates the state variable and triggers React to render the component again
 - How do you handle events in React?
-  with an event handler which is a function that is triggered in response to an event like clicking, hovering, focusing, etc
+  with an event handler which is a function that is triggered in response to an event like clicking, hovering, focusing, etc.
+  ex. onClick or onXxx
 - How do you let a parent component know that an event happened?
   you pass the event handler for the child as a prop
 
