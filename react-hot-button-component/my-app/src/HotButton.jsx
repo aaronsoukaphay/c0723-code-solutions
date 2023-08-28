@@ -30,7 +30,7 @@ export default function HotButton() {
       onClick={handleClicks}
       className="button"
       style={{ backgroundColor: bgColor, color: 'black' }}>
-      Hot Button {clicks}
+      Hot Button
     </button>
   );
 }
