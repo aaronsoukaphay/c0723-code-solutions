@@ -43,10 +43,22 @@ function addEmployees() {
   xhr.addEventListener('load', () => {
     console.log(xhr.response);
     console.log('Days Open', business.daysOpen);
+    const positions = [
+      'Executive Manager',
+      'Marketing Manager',
+      'Project Manager',
+      'Billing',
+    ];
 
-    // for (let i = 0; i < 4; i++) {
-    //   business.employees = robert;
-    // }
+    for (let i = 0; i < 4; i++) {
+      const newSchedule = generateSchedule();
+      business.employees[xhr.response[i].name] = {
+        position: positions[i],
+        daysOfWeekWorking: newSchedule,
+        isFullTime: isFullTime(newSchedule),
+      };
+    }
+    console.log('business employees', business.employees);
 
     function generateSchedule() {
       const schedule = [];
@@ -62,31 +74,18 @@ function addEmployees() {
       schedule.push(business.daysOpen[6]);
       return schedule;
     }
-    // console.log('Schedule generated:', generateSchedule())
 
-    // function isFullTime(schedule){
-    //   return schedule.length
-    // }
+    function isFullTime(schedule) {
+      return schedule.length >= 5;
+    }
 
-    business.employees[xhr.response[0].name] = {
-      position: 'Clerk',
-      daysOfWeekWorking: generateSchedule(),
-    };
-    business.employees[xhr.response[1].name] = {
-      position: 'Marketing Manager',
-      daysOfWeekWorking: generateSchedule(),
-    };
-    business.employees[xhr.response[2].name] = {
-      position: 'Admin Assistant',
-      daysOfWeekWorking: generateSchedule(),
-    };
-    business.employees[xhr.response[3].name] = {
-      position: 'Product Manager',
-      daysOfWeekWorking: generateSchedule(),
-    };
-    console.log(business.employees);
+    business.totalEmployees += 4;
   });
   xhr.send();
 }
 
 addEmployees();
+
+// function deleteEmployee(employeeName) {
+//   delete business.employees.employeeName
+// }
