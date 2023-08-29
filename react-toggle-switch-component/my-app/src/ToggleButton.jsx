@@ -23,9 +23,9 @@ export default function ToggleButton({ label }) {
         onClick={() => setIsOn(!isOn)}
         style={{ backgroundColor: bgColor }}
         className="toggle-switch">
-        <p className="slider" style={{ translate: position }}></p>
+        <div className="slider" style={{ translate: position }}></div>
       </button>
-      <p className="state-label">{label}</p>
+      <span className="state-label">{label}</span>
     </div>
   );
 }
