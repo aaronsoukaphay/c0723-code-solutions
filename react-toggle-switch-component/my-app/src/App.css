@@ -35,27 +35,3 @@
     animation: logo-spin infinite 20s linear;
   }
 }
-
-.toggle-switch,
-.state-label,
-.slider {
-  display: inline-block;
-}
-
-.toggle-switch {
-  margin-right: 1rem;
-  padding: 0;
-  width: 4.5rem;
-  height: 2rem;
-  border-radius: 1rem;
-}
-
-.slider {
-  width: 1rem;
-  height: 2rem;
-  border-radius: 1rem;
-  left: 15px;
-  bottom: 1px;
-  position: relative;
-  background-color: white;
-}

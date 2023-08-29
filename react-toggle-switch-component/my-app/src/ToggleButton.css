@@ -1,0 +1,29 @@
+.toggle-switch,
+.state-label,
+.slider {
+  display: inline-block;
+}
+
+.toggle-switch {
+  margin-right: 1rem;
+  padding: 0;
+  width: 4.5rem;
+  height: 2rem;
+  border-radius: 1rem;
+}
+
+.slider {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  left: 15px;
+  bottom: 1.05rem;
+  position: relative;
+  background-color: white;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
