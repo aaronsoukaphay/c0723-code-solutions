@@ -1,0 +1,14 @@
+.input {
+  color: black;
+  background-color: white;
+  margin: 0.5rem 0.5rem 0 0;
+}
+
+.text,
+.wrong {
+  color: red;
+}
+
+.correct {
+  color: green;
+}
