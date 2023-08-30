@@ -26,59 +26,59 @@ const business = {
 function addWeekends() {
   business.daysOpen.push('Sat', 'Sun');
   for (const employee in business.employees) {
-    console.log(business.employees[employee]);
+    business.employees[employee].daysOfWeekWorking.push('Sat', 'Sun');
   }
 }
 
-addWeekends();
-console.log('addWeekends:', business);
+function generateSchedule() {
+  const schedule = [];
+  const randomNumberOfDays = Math.floor(Math.random() * 5) + 1;
+  for (let i = 0; i < randomNumberOfDays; i++) {
+    const randomWeekdayIndex = Math.floor(Math.random() * 5);
+    if (i === 0) {
+      schedule.push(business.daysOpen[randomWeekdayIndex]);
+    } else if (!schedule.includes(business.daysOpen[randomWeekdayIndex]))
+      schedule.push(business.daysOpen[randomWeekdayIndex]);
+  }
+  schedule.push(business.daysOpen[5]);
+  schedule.push(business.daysOpen[6]);
+  return schedule;
+}
+
+function isFullTime(schedule) {
+  for (const employee in business.employees) {
+    if (business.employees[employee].daysOfWeekWorking.length >= 5) {
+      business.employees[employee].isFullTime = true;
+    } else {
+      business.employees[employee].isFullTime = false;
+    }
+  }
+}
 
 function addEmployees() {
+  const positions = [
+    'Executive Manager',
+    'Marketing Manager',
+    'Project Manager',
+    'Billing',
+  ];
   const xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://jsonplaceholder.typicode.com/users');
   xhr.responseType = 'json';
   xhr.addEventListener('load', () => {
     console.log(xhr.response);
-    console.log('Days Open', business.daysOpen);
-    const positions = [
-      'Executive Manager',
-      'Marketing Manager',
-      'Project Manager',
-      'Billing',
-    ];
-
     for (let i = 0; i < 4; i++) {
-      const newSchedule = generateSchedule();
-      business.employees[xhr.response[i].name] = {
+      const newEmployee = {
         position: positions[i],
-        daysOfWeekWorking: newSchedule,
-        isFullTime: isFullTime(newSchedule),
+        daysOfWeekWorking: generateSchedule(),
       };
+      business.employees[xhr.response[i].name] = newEmployee;
     }
+    isFullTime();
     console.log('business employees', business.employees);
-
-    function generateSchedule() {
-      const schedule = [];
-      const randomNumberOfDays = Math.floor(Math.random() * 5) + 1;
-      for (let i = 0; i < randomNumberOfDays; i++) {
-        const randomWeekdayIndex = Math.floor(Math.random() * 5);
-        if (i === 0) {
-          schedule.push(business.daysOpen[randomWeekdayIndex]);
-        } else if (!schedule.includes(business.daysOpen[randomWeekdayIndex]))
-          schedule.push(business.daysOpen[randomWeekdayIndex]);
-      }
-      schedule.push(business.daysOpen[5]);
-      schedule.push(business.daysOpen[6]);
-      return schedule;
-    }
-
-    function isFullTime(schedule) {
-      return schedule.length >= 5;
-    }
-
-    business.totalEmployees += 4;
   });
   xhr.send();
+  business.totalEmployees += 4;
 }
 
 addEmployees();
@@ -94,4 +94,6 @@ document.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
 
 function handleDOMContentLoaded() {
   console.log('dom fully loaded');
+  addWeekends();
+  isFullTime();
 }
