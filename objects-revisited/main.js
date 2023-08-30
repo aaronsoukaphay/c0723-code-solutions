@@ -24,13 +24,10 @@ const business = {
 };
 
 function addWeekends() {
-  const { daysOpen } = business;
-  daysOpen.push('Sat', 'Sun');
-  const { employees } = business;
-  employees.shawn.daysOfWeekWorking.push('Sat', 'Sun');
-  employees.aaron.daysOfWeekWorking.push('Sat', 'Sun');
-  employees.dennis.daysOfWeekWorking.push('Sat', 'Sun');
-  employees.marshall.daysOfWeekWorking.push('Sat', 'Sun');
+  business.daysOpen.push('Sat', 'Sun');
+  for (const employee in business.employees) {
+    console.log(business.employees[employee]);
+  }
 }
 
 addWeekends();
@@ -86,6 +83,15 @@ function addEmployees() {
 
 addEmployees();
 
-// function deleteEmployee(employeeName) {
-//   delete business.employees.employeeName
-// }
+function deleteEmployee(employeeName) {
+  delete business.employees[employeeName];
+  business.totalEmployees -= 1;
+}
+
+deleteEmployee();
+
+document.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
+
+function handleDOMContentLoaded() {
+  console.log('dom fully loaded');
+}
