@@ -1,12 +1,8 @@
-export default function Indicators() {
-  return (
-    <div>
-      <button>0</button>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>4</button>
-      <button>5</button>
-    </div>
-  );
+export default function Indicators({ count, currentIndex }) {
+  const buttons = [];
+  for (let i = 0; i < count; i++) {
+    buttons.push(<button key={i}>{i}</button>);
+  }
+  currentIndex;
+  return <div>{buttons}</div>;
 }
