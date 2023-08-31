@@ -1,3 +1,3 @@
-export default function PrevButton() {
-  return <button>Prev</button>;
+export default function PrevButton({ onSelect }) {
+  return <button onClick={() => onSelect()}>Prev</button>;
 }

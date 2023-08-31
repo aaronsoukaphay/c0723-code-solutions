@@ -1,3 +1,3 @@
-export default function NextButton() {
-  return <button>Next</button>;
+export default function NextButton({ onSelect }) {
+  return <button onClick={() => onSelect()}>Next</button>;
 }

@@ -5,14 +5,24 @@ import Indicators from './Indicators.jsx';
 import { useState } from 'react';
 
 export default function RotatingBanner({ items }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  setCurrentIndex();
+  const [currentIndex, setCurrentIndex] = useState(5);
+
   return (
     <>
       <Banner item={items[currentIndex]} />
-      <PrevButton />
-      <Indicators count={items.length} currentIndex={currentIndex} />
-      <NextButton />
+      <PrevButton
+        onSelect={() =>
+          setCurrentIndex((currentIndex - 1 + items.length) % items.length)
+        }
+      />
+      <Indicators
+        count={items.length}
+        current={currentIndex}
+        onSelect={(i) => setCurrentIndex(i)}
+      />
+      <NextButton
+        onSelect={() => setCurrentIndex((currentIndex + 1) % items.length)}
+      />
     </>
   );
 }

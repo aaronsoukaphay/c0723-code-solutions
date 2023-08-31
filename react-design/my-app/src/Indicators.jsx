@@ -1,8 +1,14 @@
-export default function Indicators({ count, currentIndex }) {
+export default function Indicators({ count, current, onSelect }) {
   const buttons = [];
   for (let i = 0; i < count; i++) {
-    buttons.push(<button key={i}>{i}</button>);
+    buttons.push(
+      <button
+        onClick={() => onSelect(i)}
+        style={{ backgroundColor: current === i ? 'lightblue' : undefined }}
+        key={i}>
+        {i}
+      </button>
+    );
   }
-  currentIndex;
   return <div>{buttons}</div>;
 }
