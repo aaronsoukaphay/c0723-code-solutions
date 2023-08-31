@@ -66,7 +66,6 @@ function addEmployees() {
   xhr.open('GET', 'https://jsonplaceholder.typicode.com/users');
   xhr.responseType = 'json';
   xhr.addEventListener('load', () => {
-    console.log(xhr.response);
     for (let i = 0; i < 4; i++) {
       const newEmployee = {
         position: positions[i],
@@ -75,25 +74,21 @@ function addEmployees() {
       business.employees[xhr.response[i].name] = newEmployee;
     }
     isFullTime();
-    console.log('business employees', business.employees);
   });
   xhr.send();
   business.totalEmployees += 4;
 }
-
-addEmployees();
 
 function deleteEmployee(employeeName) {
   delete business.employees[employeeName];
   business.totalEmployees -= 1;
 }
 
-deleteEmployee();
-
 document.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
 
 function handleDOMContentLoaded() {
-  console.log('dom fully loaded');
   addWeekends();
   isFullTime();
+  addEmployees();
+  deleteEmployee('aaron');
 }
