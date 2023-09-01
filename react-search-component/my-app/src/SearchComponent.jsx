@@ -7,7 +7,7 @@ export default function SearchComponent({ list }) {
 
   function filter() {
     const filtered = list.filter((statement) =>
-      statement.toLowerCase().includes(typed)
+      statement.toLowerCase().includes(typed.toLowerCase())
     );
     return filtered.length === 0 ? ['No items match the filter.'] : filtered;
   }
