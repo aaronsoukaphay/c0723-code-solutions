@@ -1,28 +1,57 @@
-import Banner from './Banner.jsx';
-import NextButton from './NexButton.jsx';
-import PrevButton from './PrevButton.jsx';
-import Indicators from './Indicators.jsx';
 import { useState } from 'react';
 
 export default function RotatingBanner({ items }) {
-  const [currentIndex, setCurrentIndex] = useState(5);
+  const [index, setIndex] = useState(0);
 
   return (
-    <>
-      <Banner item={items[currentIndex]} />
+    <div>
+      <Banner item={items[index]} />
       <PrevButton
-        onSelect={() =>
-          setCurrentIndex((currentIndex - 1 + items.length) % items.length)
-        }
+        onClick={() => setIndex((index - 1 + items.length) % items.length)}
       />
       <Indicators
-        count={items.length}
-        current={currentIndex}
-        onSelect={(i) => setCurrentIndex(i)}
+        items={items}
+        currentIndex={index}
+        onClick={(index) => setIndex(index)}
       />
-      <NextButton
-        onSelect={() => setCurrentIndex((currentIndex + 1) % items.length)}
-      />
+      <NextButton onClick={() => setIndex((index + 1) % items.length)} />
+    </div>
+  );
+}
+
+function Banner({ item }) {
+  return <div>{item}</div>;
+}
+
+function PrevButton({ onClick }) {
+  return (
+    <div>
+      <button onClick={onClick}>Previous</button>
+    </div>
+  );
+}
+
+function Indicators({ items, onClick, currentIndex }) {
+  return (
+    <>
+      {items.map((item, i) => (
+        <button
+          style={{
+            backgroundColor: currentIndex === i ? 'lightblue' : undefined,
+          }}
+          onClick={() => onClick(i)}
+          key={i}>
+          {i}
+        </button>
+      ))}
     </>
+  );
+}
+
+function NextButton({ onClick }) {
+  return (
+    <div>
+      <button onClick={onClick}>Next</button>
+    </div>
   );
 }
