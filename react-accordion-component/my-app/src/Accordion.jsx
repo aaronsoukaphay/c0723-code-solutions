@@ -1,38 +1,31 @@
 import { useState } from 'react';
-import './Accordion.css';
 
 export default function Accordion({ topics }) {
-  const [id, setId] = useState(0);
+  const [openTopic, setOpenTopic] = useState(topics[1]);
 
-  function handleID(buttonId) {
-    setId(buttonId);
+  function handleClick(topic) {
+    setOpenTopic(topic === openTopic ? undefined : topic);
   }
 
   return (
-    <>
-      <Header topics={topics} onClick={handleID} id={id} />
-    </>
+    <div>
+      {topics.map((topic) => (
+        <HeaderAndDetail
+          key={topic.id}
+          onClick={() => handleClick(topic)}
+          topic={topic}
+          isOpen={openTopic === topic}
+        />
+      ))}
+    </div>
   );
 }
 
-function Header({ onClick, topics, id }) {
+function HeaderAndDetail({ topic, isOpen, onClick }) {
   return (
-    <>
-      {topics.map((topic) => (
-        <div key={topic.id}>
-          <div>
-            <button
-              onClick={() =>
-                topic.id === id ? onClick(undefined) : onClick(topic.id)
-              }>
-              {topic.title}
-            </button>
-          </div>
-          <div className={id === topic.id ? 'content' : 'content hidden'}>
-            {topic.content}
-          </div>
-        </div>
-      ))}
-    </>
+    <div>
+      <button onClick={onClick}>{topic.title}</button>
+      {isOpen && <p>{topic.content}</p>}
+    </div>
   );
 }
