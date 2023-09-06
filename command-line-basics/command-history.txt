@@ -1,0 +1,500 @@
+   65  cd ../..
+   66  git status
+   67  git add react-events
+   68  git status
+   69  git commit -m "redid code to better understand concept"
+   70  git push origin react-events
+   71  git switch main
+   72  git pull origin main
+   73  git pull origin main
+   74  git checkout -b react-typescript
+   75  cd react-typescript
+   76  npm create vite@latest my-app -- --template react-ts
+   77  cd my-app
+   78  npm install
+   79  npm run dev
+   80  git status
+   81  cd ../..
+   82  git status
+   83  git add react-typescript
+   84  git status
+   85  git commit -m "Completed react-typescript exercise"
+   86  git push origin react-typescript 
+   87  git switch main
+   88  git checkout -b react-refresher
+   89  cd react-refresher
+   90  npm create vite@latest my-app -- --template react-ts
+   91  cd my-app
+   92  npm install
+   93  npm run dev
+   94  ../..
+   95  cd ../..
+   96  git status
+   97  git add react-refresher
+   98  git status
+   99  git commit -m "Completed react-refresher exercise"
+  100  git push origin react-refresher
+  101  git switch main
+  102  git pull origin main
+  103  git switch react-refresher
+  104  git status
+  105  git add react-refresher
+  106  git status
+  107  git commit -m "updated quiz answers"
+  108  git push origin react-refresher
+  109  git switch main
+  110  git checkout -b react-hot-button-component
+  111  cd react-hot-button-component
+  112  npm create vite@latest my-app -- --template react-ts
+  113  cd my-app
+  114  npm install
+  115  npm run dev
+  116  cd ../..
+  117  git status
+  118  git add react-hot-button-component
+  119  git status
+  120  git commit -m "Completed react-hot-button-component exercise"
+  121  git push origin react-hot-button-component
+  122  cd react-hot-button-component/my-app
+  123  npm run dev
+  124  cd ../..
+  125  git status
+  126  git add react-hot-button-component
+  127  git status
+  128  git commit -m "removed number from hot button"
+  129  git push origin react-hot-button-component 
+  130  git switch main
+  131  git pull origin main
+  132  git switch react-hot-button-component 
+  133  git status
+  134  git add react-hot-button-component
+  135  git status
+  136  git commit -m "removed empty brackets in App.tsx"
+  137  git push origin react-hot-button-component 
+  138  git switch main
+  139  git pull origin main
+  140  git switch react-hot-button-component
+  141  git switch main
+  142  git pull origin main
+  143  git switch react-refresher
+  144  git switch react-hot-button-component
+  145  git pull origin react-hot-button-component 
+  146  git switch react-refresher
+  147  cd react-refresher/my-app
+  148  npm run dev
+  149  npm install
+  150  npm run dev
+  151  npm run dev
+  152  cd ../..
+  153  git switch react-hot-button-component 
+  154  git stash
+  155  git stash list
+  156  git stash clear
+  157  git stash list
+  158  git switch main
+  159  git switch react-hot-button-component 
+  160  npm install
+  161  npm run dev
+  162  npm run dev
+  163  cd react-hot-button-component
+  164  npm create vite@latest my-app -- --template react-ts\
+  165  cd my-app
+  166  npm install
+  167  npm run dev
+  168  npm run dev
+  169  git switch main
+  170  cd ../..
+  171  git checkout -b react-toggle-switch-component
+  172  cd react-toggle-switch-component
+  173  cd react-toggle-switch-component'
+  174  '
+  175  cd react-toggle-switch-component
+  176  npm create vite@latest my-app -- --template react-ts
+  177  cd my-app
+  178  npm install
+  179  npm run dev
+  180  cd ../..
+  181  git status
+  182  git add react-toggle-switch-component
+  183  git status
+  184  git commit -m "Completed react-toggle-switch-component exercise"
+  185  git push origin react-toggle-switch-component
+  186  git switch javascript-carousel
+  187  git stash
+  188  git switch main
+  189  git switch javscript-carousel
+  190  git switch javascript-carousel
+  191  git switch object-revisited
+  192  git switch objects-revisited
+  193  git switch react-toggle-button-component
+  194  git switch react-toggle-switch-component
+  195  cd react-toggle-switch-component/my-app
+  196  npm run dev
+  197  git status
+  198  ../..
+  199  git status
+  200  ../..
+  201  cd ../..
+  202  git status
+  203  git add react-toggle-switch-component
+  204  git status
+  205  git commit -m "created ToggleButton.css file and replaced button within button with p element"
+  206  git push origin react-toggle-switch-component 
+  207  git switch objects revisited
+  208  git switch object-revisited
+  209  git switch objects-revisited
+  210  git stash list
+  211  git switch main
+  212  git stash list
+  213  git switch objects-revisited
+  214  git stash list
+  215  git stash clear
+  216  git stash list
+  217  git status
+  218  git add objects-revisited
+  219  git status
+  220  git commit -m "created isFullTime function"
+  221  git status
+  222  git status
+  223  git add objects-revisited
+  224  git status
+  225  git commit -m "created isFullTime function"
+  226  git switch react-toggle-switch-component 
+  227  cd react-toggle-switch-component/my-app
+  228  npm run dev
+  229  cd ../..
+  230  git status
+  231  git add react-toggle-switch-component
+  232  git status
+  233  git commit -m "changed p to div and change state-label to span element"
+  234  git push origin react-toggle-switch-component 
+  235  git switch objects-revisited
+  236  git status
+  237  git add object-revisited
+  238  git status
+  239  git add objects-revisited
+  240  git status
+  241  git commit -m "created deleteEmployee function, not finished yet"
+  242  git status
+  243  git add objects-revisited
+  244  git status
+  245  git commit -m "created delete employees function"
+  246  git switch react-toggle-switch-component 
+  247  git switch main
+  248  git checkout -b react-rendering-lists
+  249  cd react-rendering-lists
+  250  npm create vite@latest my-app -- --template react-ts
+  251  cd my-app
+  252  npm install
+  253  npm run dev
+  254  cd ../..
+  255  git status
+  256  git add react-rendering-lists
+  257  git status
+  258  git commit -m "Completed react-rendering-lists exercise"
+  259  git push origin react-rendering-lists
+  260  git status
+  261  git add react-rendering-lists
+  262  git status
+  263  git commit -m "updated quiz answers"
+  264  git push origin react-rendering-lists
+  265  git switch react-toggle-switch-component
+  266  git switch main
+  267  git checkout -b react-form-control
+  268  cd react-form-controls
+  269  npm create vite@latest -- --template react-ts
+  270  cd vite-project
+  271  npm install
+  272  npm run dev
+  273  cd ../..
+  274  git status
+  275  git add react-form-control
+  276  git add react-form-controls
+  277  git status
+  278  git commit -m "Completed react-form-controls exercise"
+  279  git push origin react-form-control
+  280  git status
+  281  git add react-form-control
+  282  git add react-form-controls
+  283  git status
+  284  git commit -m "answered quiz questions"
+  285  git push origin react-form-control
+  286  git branch -M react-form-controls
+  287  git push origin react-form-controls
+  288  git switch objects-revisited
+  289  git add objects-revisited
+  290  git status
+  291  git commit -m "refactoring addWeekends function"
+  292  git switch react-form-controls
+  293  git switch main
+  294  git checkout -b react-validated-input-component
+  295  cd react-validated-input-component
+  296  npm create vite@latest my-app -- --template react-ts
+  297  cd my-app
+  298  npm install
+  299  npm run dev
+  300  npm install react-icons --save
+  301  npm run dev
+  302  git status
+  303  ../..
+  304  cd ../..
+  305  git status
+  306  git add react-validated-input-component
+  307  git status
+  308  git commit -m "Completed react-validated-input-component exercise"
+  309  git push origin react-validated-input-component
+  310  git switch objects-revisited
+  311  git status
+  312  git add objects-revisited
+  313  git status
+  314  git commit -m "refactored addEmployees code"
+  315  git switch react-validated-input-component
+  316  git switch objects-revisited
+  317  git status
+  318  git add objects-revisited
+  319  git status
+  320  git commit -m "completed objects-revisited exercise"
+  321  git push origin objects-revisited
+  322  git switch react-form-controls
+  323  git switch javascript-carousel
+  324  git status
+  325  git add javascript-carousel
+  326  git status
+  327  git commit -m "saving checkpoint"
+  328  git switch react-form-controls
+  329  cd react-form-controls
+  330  create vite@latest my-app -- --template react-ts
+  331  npm create vite@latest my-app -- --template react-ts
+  332  cd my-app
+  333  npm install
+  334  npm run dev
+  335  cd ../..
+  336  git status
+  337  git add react-form-controls
+  338  git status
+  339  git switch main
+  340  git pull origin main
+  341  git checkout -b react-design
+  342  cd react-design
+  343  npm create vite@latest my-app -- --template react-ts
+  344  cd my-app
+  345  npm install
+  346  npm run dev
+  347  npm start
+  348  npm run dev
+  349  git status
+  350  cd ../..
+  351  git status
+  352  git add react-design
+  353  git status
+  354  git commit -m "completed phase 1"
+  355  git push origin react-design
+  356  cd react-design/my-app
+  357  npm run dev
+  358  cd ../..
+  359  git status
+  360  git add react-design
+  361  git status
+  362  git commit -m "completed phase 2"
+  363  git status
+  364  git add react-design
+  365  git status
+  366  git commit -m "completed phase 2"
+  367  git push origin react-design
+  368  cd react-design/my-app
+  369  npm run dev
+  370  cd ../..
+  371  git status
+  372  git add react-design
+  373  git status
+  374  git commit -m "completed phase 3"
+  375  git push origin react-design
+  376  git switch main
+  377  git checkout -b react-search-component
+  378  cd react-search-component
+  379  npm create vite@latest my-app -- --template react-ts
+  380  cd my-app
+  381  npm install
+  382  npm run dev
+  383  npm run dev
+  384  cd ../..
+  385  git status
+  386  git add react-search-component
+  387  git status
+  388  git commit -m "Completed react-search-component exercise"
+  389  git push origin react-search-component 
+  390  git switch main
+  391  git pull origin main
+  392  git pull origin main
+  393  git switch react-rendering-lists
+  394  git status
+  395  git push origin react-rendering-lists
+  396  git add react-rendering-lists
+  397  git status
+  398  git status
+  399  git switch main
+  400  git pull origin main
+  401  git switch react-search-components
+  402  git switch react-search-component
+  403  git status
+  404  git add react-search-component
+  405  git status
+  406  git commit -m "added tolowercase to filter function"
+  407  git push origin react-search-component
+  408  git switch main
+  409  git checkout -b react-accordian-component
+  410  cd react-accordian-component
+  411  cd react-accordian-component
+  412  cd react-accordian-component
+  413  git branch -M react-accordion-component
+  414  cd react-accordion-component
+  415  npm create vite@latest my-app -- --template react-ts
+  416  cd my-app
+  417  npm install
+  418  npm run dev
+  419  cd ../..
+  420  git status
+  421  git add react-accordion-component
+  422  git status
+  423  git commit -m "Completed react-accordion-component exercise"
+  424  git push origin react-accordion-component 
+  425  git switch main
+  426  git checkout -b react-app-drawer-component
+  427  cd react-app-drawer-component
+  428  npm create vite@latest my-app -- --template react-ts
+  429  cd my-app
+  430  npm install
+  431  npm run dev
+  432  npm install react-icons
+  433  npm run dev
+  434  git status
+  435  cd ../..
+  436  git status
+  437  git add react-app-drawer-component
+  438  git status
+  439  git commit -m "Completed react-app-drawer-component exercise"
+  440  git push origin main
+  441  cd react-app-drawer-component/my-app
+  442  npm run dev
+  443  cd ../..
+  444  git push origin react-app-drawer-component
+  445  git switch main
+  446  git pull origin main
+  447  git switch react-validated-input-component
+  448  git switch main
+  449  git status
+  450  git status
+  451  git status
+  452  cd react-validated-input-component/my-app
+  453  npm run dev
+  454  cd ../..
+  455  git status
+  456  git switch main
+  457  git pull origin main
+  458  git switch react-search-component
+  459  cd react-search-component/my-app
+  460  npm run dev
+  461  cd ../..
+  462  git status
+  463  git add react-search-component
+  464  git status
+  465  git commit -m "SearchComponent to be one file"
+  466  git push origin react-search-component
+  467  git switch main
+  468  git pull origin main
+  469  git switch react-design
+  470  cd react-design/my-app
+  471  npm run dev
+  472  cd ../..
+  473  git status
+  474  git add react-design
+  475  git status
+  476  git commit -m "combined code into RotatingBanner file"
+  477  git push origin react-design
+  478  git switch main
+  479  git pull origin main
+  480  git switch react-accordion-component
+  481  cd react-accordion-component/my-app
+  482  npm run dev
+  483  cd ../..
+  484  git status
+  485  git add react-accordion-component
+  486  git status
+  487  git commit -m "refactored code in Accordion.jsx"
+  488  git push origin react-accordion-component
+  489  git switch main
+  490  git pull origin main
+  491  git switch react-app-drawer-component
+  492  cd my-app
+  493  cd react-app-drawer-component/my-app
+  494  npm run dev
+  495  cd ../..
+  496  git status
+  497  git switch main
+  498  git pull origin main
+  499  git checkout -b command-line-basics
+  500  cd command-line-basics
+  501  man man
+  502  man cat
+  503  man cat
+  504  cat laziness.text
+  505  man cat
+  506  cat -A laziness.txt
+  507  man cat
+  508  cat -A impaotience.txt
+  509  cat -A impatience.txt
+  510  cat -A hubris.txt
+  511  man cat
+  512  cat laziness.txt impatience.txt hubris.txt 
+  513  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+  514  cat -A three-virtues.txt
+  515  man ls
+  516  ls
+  517  ls -a
+  518  ls -F
+  519  ls -aF lfz-staff > lfz-staff/contents.txt
+  520  cat -A lfz-staff/contents.txt
+  521  man pwd
+  522  pwd
+  523  man pwd
+  524  pwd > i-was-here.txt
+  525  ls
+  526  cat -A i-was-here.txt
+  527  man echo
+  528  echo 'Hello, World!'
+  529  echo 'Hello, World!' > hello.txt
+  530  ls
+  531  cat -A hello.txt
+  532  man cat
+  533  man touch
+  534  touch tag-youre-it.txt
+  535  touch snoot/boop.txt
+  536  ls snoot/
+  537  man mkdir
+  538  man mkdir
+  539  mkdir parent
+  540  ls parent/
+  541  ls
+  542  man mkdir
+  543  mkdir -p parent/child
+  544  mkdir -p parent/child/grandchild
+  545  touch parent/child/grandchild/.gitkeep
+  546  ls -a
+  547  man mv
+  548  mv pokimans pokemon
+  549  mv pokiemans pokemon
+  550  ls
+  551  man rm
+  552  rm lol.txt
+  553  ls
+  554  rm -r kill-me
+  555  ls
+  556  man cp
+  557  man cp
+  558  cp and-then.txt no-and-then.txt
+  559  ls
+  560  cat -A and-then.txt no-and-then.txt
+  561  man history
+  562  history
+  563  touch command-history.txt
+  564  history > command-history.txt
