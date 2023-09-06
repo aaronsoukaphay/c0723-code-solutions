@@ -30,7 +30,7 @@ After completing this exercise, you should be able to discuss or answer the foll
   - `cp`
     copy a file
 - What are the three virtues of a great programmer?
-  laziness, impatience, and hubris
+  laziness, impatience, hubris
 
 ## Notes
 
