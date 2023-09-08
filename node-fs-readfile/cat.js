@@ -3,9 +3,7 @@ import { readFile } from 'node:fs/promises';
 try {
   const fileNames = process.argv.slice(2);
 
-  const arrayFileNames = fileNames.map((file) =>
-    readFile(file, { encoding: 'utf8' })
-  );
+  const arrayFileNames = fileNames.map((file) => readFile(file, 'utf8'));
 
   const contents = await Promise.all(arrayFileNames);
 
