@@ -9,7 +9,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - How do `async` and `await` differ from `Promise.then` and `Promise.catch`?
   async and await are read sequentially whereas Promise.then and Promise.catch code are spread across multiple files. async and await is easier to follow, understand, and reason about.
 - When do you use `async`?
-  when you want the function to be an async function
+  when you want to use await
 - When do you use `await`? When do you _not_ use `await`? (What happens if you `await` a synchronous function?)
   use await with async functions and functions that return promises
   do not use it if you're working with synchronous code, non-async functions, or top-level code

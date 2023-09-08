@@ -59,6 +59,10 @@ async function fetchChained() {
   console.log(elapsed(), 'fetchChained3:', msg3);
 }
 
-fetchOnce()
-  .then(() => fetchSeveral())
-  .then(() => fetchChained());
+// fetchOnce()
+//   .then(() => fetchSeveral())
+//   .then(() => fetchChained());
+
+await fetchOnce();
+await fetchSeveral();
+await fetchChained();
