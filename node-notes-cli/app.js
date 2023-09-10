@@ -1,33 +1,51 @@
 import { readFile, writeFile } from 'node:fs/promises';
 
+const parsedJSON = JSON.parse(await readFile('data.json', 'utf8'));
+
+const keyword = process.argv[2];
+
+async function updateFile() {
+  await writeFile('data.json', JSON.stringify(parsedJSON));
+}
+
+function read() {
+  for (const key in parsedJSON.notes) {
+    console.log(`${key}: ${parsedJSON.notes[key]}`);
+  }
+}
+
+function create() {
+  const newNote = process.argv[3];
+  parsedJSON.notes[parsedJSON.nextId] = newNote;
+  parsedJSON.nextId++;
+  updateFile();
+}
+
+function update() {
+  const [entryId, updatedNote] = process.argv.slice(3);
+  for (const key in parsedJSON.notes) {
+    if (key === entryId) {
+      parsedJSON.notes[key] = updatedNote;
+    }
+  }
+  updateFile();
+}
+
+function remove() {
+  const entryId = process.argv[3];
+  for (const key in parsedJSON.notes) {
+    if (key === entryId) {
+      delete parsedJSON.notes[key];
+    }
+  }
+  updateFile();
+}
+
 try {
-  const content = await readFile('data.json');
-  const parsedJSON = JSON.parse(content);
-  for (const [key, value] of Object.entries(parsedJSON.notes)) {
-    process.argv[2] === 'read' && console.log(`${key}: ${value}`);
-  }
-
-  const [createKeyword, createNote] = process.argv.slice(2);
-  if (createKeyword === 'create') {
-    parsedJSON.notes[parsedJSON.nextId] = createNote;
-    parsedJSON.nextId++;
-    const stringifyJSON = JSON.stringify(parsedJSON, null, 2);
-    await writeFile('data.json', stringifyJSON);
-  }
-
-  const [updateKeyword, updateId, updateNote] = process.argv.slice(2);
-  if (updateKeyword === 'update') {
-    parsedJSON.notes[updateId] = updateNote;
-    const stringifyJSON = JSON.stringify(parsedJSON, null, 2);
-    await writeFile('data.json', stringifyJSON);
-  }
-
-  const [deletekeyword, deleteId] = process.argv.slice(2);
-  if (deletekeyword === 'delete') {
-    delete parsedJSON.notes[deleteId];
-    const stringifyJSON = JSON.stringify(parsedJSON, null, 2);
-    await writeFile('data.json', stringifyJSON);
-  }
+  keyword === 'read' && (await read());
+  keyword === 'create' && (await create());
+  keyword === 'update' && (await update());
+  keyword === 'delete' && (await remove());
 } catch (error) {
   console.log(error.message);
 }
