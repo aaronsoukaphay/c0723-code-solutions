@@ -23,21 +23,13 @@ function create() {
 
 function update() {
   const [entryId, updatedNote] = process.argv.slice(3);
-  for (const key in parsedJSON.notes) {
-    if (key === entryId) {
-      parsedJSON.notes[key] = updatedNote;
-    }
-  }
+  parsedJSON.notes[entryId] = updatedNote;
   updateFile();
 }
 
 function remove() {
   const entryId = process.argv[3];
-  for (const key in parsedJSON.notes) {
-    if (key === entryId) {
-      delete parsedJSON.notes[key];
-    }
-  }
+  delete parsedJSON.notes[entryId];
   updateFile();
 }
 
