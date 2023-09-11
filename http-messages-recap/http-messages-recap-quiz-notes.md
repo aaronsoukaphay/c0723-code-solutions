@@ -21,6 +21,18 @@ After completing this exercise, you should be able to discuss or answer the foll
 - Is a body required for a valid HTTP message?
   no, not all HTTP messages have a body
 
+  all status codes are 100 or greater
+  100 range: informational
+  200 range: success
+  300 range: redirection
+  400 range: client error
+  500 range: server error
+
+  read: GET
+  create: POST
+  update: PUT
+  delete: DELETE
+
 ## Notes
 
 All student notes should be written here.
