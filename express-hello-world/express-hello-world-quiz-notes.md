@@ -11,7 +11,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - How do you mount a middleware with an Express application?
   .use()
 - Which objects does an Express application pass to your middleware to manage the request/response lifecycle of the server?
-  request(req) and response(res)
+  request(req), response(res), and next (must be the same order)
 
 ## Notes
 
