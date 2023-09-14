@@ -15,10 +15,11 @@ export default function List() {
     async function display() {
       try {
         const list = await readItems();
-        setIsLoading(false);
         setItems(list);
       } catch (error) {
         setError(error);
+      } finally {
+        setIsLoading(false);
       }
     }
     display();

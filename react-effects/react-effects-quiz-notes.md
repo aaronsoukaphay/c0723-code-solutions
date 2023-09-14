@@ -6,6 +6,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 
 - When is a component "mounted" to the DOM?
   when the component is rendered for the first time
+  function is called when component is mounted and when the dependencies change
 - What is a React Effect?
   a side effect caused by rendering
 - When should you use an Effect and when should you not use an Effect?
