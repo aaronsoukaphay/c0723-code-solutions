@@ -9,7 +9,7 @@ async function readData() {
 }
 
 async function updateFile(data) {
-  await writeFile('data.json', JSON.stringify(data));
+  await writeFile('data.json', JSON.stringify(data, null, 2));
 }
 
 const app = express();
@@ -31,39 +31,39 @@ app.get('/api/notes', async (req, res) => {
 });
 
 app.get('/api/notes/:id', async (req, res) => {
+  const noteId = req.params.id;
   try {
     const data = await readData();
-    const noteId = req.params.id;
-    const errorMessage = { error: `cannot find note with id ${noteId}` };
     if (Number(noteId) < 0) {
-      res.sendStatus(400);
+      res.status(400).json({ error: 'id must be a positive integer' });
       return;
     }
-    for (const note in data.notes) {
-      if (note === noteId) {
-        res.json(data.notes[note]);
-        return;
-      }
+    if (data.notes[noteId] === undefined) {
+      res.status(404).json({ error: `cannot find note with id ${noteId}` });
     }
-    res.status(404).json(errorMessage);
+    res.json(data.notes[noteId]);
   } catch (error) {
     console.log(error.message);
   }
 });
 
 app.post('/api/notes', async (req, res) => {
+  const content = req.body.content;
   try {
     const data = await readData();
-    if (!req.body.content) {
+    const id = data.nextId;
+    if (!content) {
       res.status(400).json({ error: 'content is a required field' });
       return;
     }
-    const info = req.body;
-    data.notes[data.nextId] = info;
-    data.notes[data.nextId].id = data.nextId;
-    res.status(201).json(data.notes[data.nextId]);
+    const note = {
+      content,
+      id,
+    };
+    data.notes[id] = note;
+    res.status(201).json(data.notes[id]);
     data.nextId++;
-    updateFile(data);
+    await updateFile(data);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'An unexpected error occurred.' });
@@ -71,22 +71,20 @@ app.post('/api/notes', async (req, res) => {
 });
 
 app.delete('/api/notes/:id', async (req, res) => {
+  const id = req.params.id;
   try {
     const data = await readData();
-    const id = req.params.id;
     if (Number(id) < 0) {
       res.status(400).json({ error: 'id must be a positive integer' });
       return;
     }
-    if (id in data.notes === false) {
+    if (data.notes[id] === undefined) {
       res.status(404).json({ error: `cannot find note with id ${id}` });
       return;
     }
-    if (id in data.notes) {
-      delete data.notes[id];
-      res.sendStatus(204);
-    }
-    updateFile(data);
+    delete data.notes[id];
+    res.sendStatus(204);
+    await updateFile(data);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'An unexpected error occurred.' });
@@ -94,26 +92,29 @@ app.delete('/api/notes/:id', async (req, res) => {
 });
 
 app.put('/api/notes/:id', async (req, res) => {
+  const id = req.params.id;
+  const content = req.body.content;
   try {
     const data = await readData();
-    const id = req.params.id;
-    if (id < 0) {
+    if (Number(id) < 0) {
       res.status(400).json({ error: 'id must be a positive integer' });
       return;
     }
-    if (!req.body.content) {
+    if (content === undefined) {
       res.status(400).json({ error: 'content is a required field' });
       return;
     }
-    if (id in data.notes === false) {
+    if (data.notes[id] === undefined) {
       res.status(404).json({ error: `cannot find note with id ${id}` });
       return;
     }
-    delete data.notes[id].content;
-    data.notes[id] = req.body;
-    data.notes[id].id = id;
+    const note = {
+      content,
+      id: Number(id),
+    };
+    data.notes[id] = note;
     res.status(200).json(data.notes[id]);
-    updateFile(data);
+    await updateFile(data);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'An unexpected error occurred.' });
