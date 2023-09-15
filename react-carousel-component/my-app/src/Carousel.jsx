@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import {
   FaChevronLeft,
   FaChevronRight,
@@ -10,13 +10,14 @@ import './Carousel.css';
 export default function Carousel({ pokemon }) {
   const [index, setIndex] = useState(0);
 
+  const handleNext = useCallback(
+    () => setIndex((index + 1) % pokemon.length),
+    [index, pokemon]
+  );
   useEffect(() => {
-    const timerId = setTimeout(() => {
-      setIndex((index + 1) % pokemon.length);
-      console.log(`index: ${index}`);
-    }, 3000);
+    const timerId = setTimeout(handleNext, 3000);
     return () => clearTimeout(timerId);
-  });
+  }, [handleNext]);
 
   return (
     <div>
