@@ -35,8 +35,8 @@ export default function Carousel({ pokemon }) {
   );
 }
 
-function Banner({ src }) {
-  return <img src={src} />;
+function Banner({ src, className }) {
+  return <img className={className} src={src} />;
 }
 
 function PrevButton({ onClick }) {
