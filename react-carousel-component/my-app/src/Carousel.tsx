@@ -7,7 +7,11 @@ import {
 } from 'react-icons/fa';
 import './Carousel.css';
 
-export default function Carousel({ pokemon }) {
+type CarouselProps = {
+  pokemon: string[];
+};
+
+export default function Carousel({ pokemon }: CarouselProps) {
   const [index, setIndex] = useState(0);
 
   const handleNext = useCallback(
@@ -24,32 +28,46 @@ export default function Carousel({ pokemon }) {
       <PrevButton
         onClick={() => setIndex((index - 1 + pokemon.length) % pokemon.length)}
       />
-      <Banner src={pokemon[index]} className="carousel" />
+      <Banner src={pokemon[index]} />
       <NextButton onClick={() => setIndex((index + 1) % pokemon.length)} />
       <Indicators
         pokemon={pokemon}
         index={index}
-        onClick={(i) => setIndex(i)}
+        onClick={(i: number) => setIndex(i)}
       />
     </div>
   );
 }
 
-function Banner({ src, className }) {
-  return <img className={className} src={src} />;
+type BannerProps = {
+  src: string;
+};
+
+function Banner({ src }: BannerProps) {
+  return <img className="carousel" src={src} />;
 }
 
-function PrevButton({ onClick }) {
+type Button = {
+  onClick: CallableFunction;
+};
+
+function PrevButton({ onClick }: Button) {
   return (
     <FaChevronLeft onClick={onClick} size={30} className="previous-image" />
   );
 }
 
-function NextButton({ onClick }) {
+function NextButton({ onClick }: Button) {
   return <FaChevronRight onClick={onClick} size={30} className="next-image" />;
 }
 
-function Indicators({ pokemon, index, onClick }) {
+type Indicators = {
+  pokemon: string[];
+  index: number;
+  onClick: CallableFunction;
+};
+
+function Indicators({ pokemon, index, onClick }: Indicators) {
   return (
     <div className="progress-dots">
       {pokemon.map((item, i) => {
