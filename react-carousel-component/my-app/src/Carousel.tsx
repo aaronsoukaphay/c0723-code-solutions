@@ -1,4 +1,3 @@
-import { useState, useEffect, useCallback } from 'react';
 import {
   FaChevronLeft,
   FaChevronRight,
@@ -6,72 +5,79 @@ import {
   FaRegCircle,
 } from 'react-icons/fa';
 import './Carousel.css';
+import { useState } from 'react';
+import { useEffect, useCallback } from 'react';
 
-type CarouselProps = {
+type PokemonProp = {
   pokemon: string[];
 };
 
-export default function Carousel({ pokemon }: CarouselProps) {
-  const [index, setIndex] = useState(0);
+export default function Carousel({ pokemon }: PokemonProp) {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = useCallback(
-    () => setIndex((index + 1) % pokemon.length),
-    [index, pokemon]
+    () => setCurrentIndex((currentIndex + 1) % pokemon.length),
+    [currentIndex, pokemon]
   );
+
   useEffect(() => {
     const timerId = setTimeout(handleNext, 3000);
     return () => clearTimeout(timerId);
   }, [handleNext]);
 
+  function handlePrev() {
+    setCurrentIndex((currentIndex - 1 + pokemon.length) % pokemon.length);
+  }
+
   return (
-    <div>
-      <PrevButton
-        onClick={() => setIndex((index - 1 + pokemon.length) % pokemon.length)}
-      />
-      <Banner src={pokemon[index]} />
-      <NextButton onClick={() => setIndex((index + 1) % pokemon.length)} />
-      <Indicators
+    <div className="carousel">
+      <PrevButton onClick={handlePrev} />
+      <Image pokemon={pokemon[currentIndex]} />
+      <NextButton onClick={handleNext} />
+      <Dots
+        index={currentIndex}
         pokemon={pokemon}
-        index={index}
-        onClick={(i: number) => setIndex(i)}
+        onClick={(i: number) => setCurrentIndex(i)}
       />
     </div>
   );
 }
 
-type BannerProps = {
-  src: string;
-};
-
-function Banner({ src }: BannerProps) {
-  return <img className="carousel" src={src} />;
-}
-
-type Button = {
+type ButtonProp = {
   onClick: CallableFunction;
 };
 
-function PrevButton({ onClick }: Button) {
+function PrevButton({ onClick }: ButtonProp) {
+  return <FaChevronLeft onClick={onClick} className="previous-image" />;
+}
+
+function NextButton({ onClick }: ButtonProp) {
+  return <FaChevronRight onClick={onClick} className="next-image" />;
+}
+
+type Image = {
+  pokemon: string;
+};
+
+function Image({ pokemon }: Image) {
   return (
-    <FaChevronLeft onClick={onClick} size={30} className="previous-image" />
+    <div className="image-wrapper">
+      <img src={pokemon} className="current-image" />
+    </div>
   );
 }
 
-function NextButton({ onClick }: Button) {
-  return <FaChevronRight onClick={onClick} size={30} className="next-image" />;
-}
-
-type Indicators = {
+type DotsProp = {
   pokemon: string[];
   index: number;
   onClick: CallableFunction;
 };
 
-function Indicators({ pokemon, index, onClick }: Indicators) {
+function Dots({ pokemon, index, onClick }: DotsProp) {
   return (
     <div className="progress-dots">
-      {pokemon.map((item, i) => {
-        return index === i ? (
+      {pokemon.map((item, i: number) =>
+        i === index ? (
           <FaCircle
             key={i}
             onClick={() => onClick(i)}
@@ -83,8 +89,8 @@ function Indicators({ pokemon, index, onClick }: Indicators) {
             onClick={() => onClick(i)}
             className="progress-dot"
           />
-        );
-      })}
+        )
+      )}
     </div>
   );
 }
