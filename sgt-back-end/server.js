@@ -21,10 +21,6 @@ app.get('/api/grades', async (req, res, next) => {
     const params = [];
     const result = await db.query(sql, params);
     const grades = result.rows;
-    if (!grades) {
-      res.json([]);
-      return;
-    }
     res.status(200).json(grades);
   } catch (error) {
     console.log(error.message);
