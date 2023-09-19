@@ -19,7 +19,7 @@ export default function Users() {
           'https://jsonplaceholder.typicode.com/users'
         );
         if (!response.ok) {
-          setError(`HTTP error! Status: ${response.status}`);
+          throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const users = await response.json();
         setUsers(users);

@@ -16,7 +16,7 @@ export default function UserDetails({ userId, onCancel }) {
           `https://jsonplaceholder.typicode.com/users/${userId}`
         );
         if (!response.ok) {
-          setError(`HTTP error! Status: ${response.status}`);
+          throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const user = await response.json();
         setUser(user);
