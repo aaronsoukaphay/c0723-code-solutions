@@ -20,6 +20,26 @@ export default function Users() {
 
   /* your code here (hint: useEffect) */
 
+  useEffect(() => {
+    async function getData() {
+      try {
+        const response = await fetch(
+          'https://jsonplaceholder.typicode.com/users'
+        );
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const users = await response.json();
+        setUsers(users);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    getData();
+  }, []);
+
   if (isLoading) {
     return <p>Loading...</p>;
   }
