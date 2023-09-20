@@ -52,7 +52,7 @@ export default function Todos() {
   async function toggleCompleted(todoId) {
     try {
       const todo = todos.find((t) => t.todoId === todoId);
-      if (!todo) throw new Error('This should never happen!', todoId);
+      if (!todo) throw new Error('something went wrong!');
       const response = await fetch(`/api/todos/${todoId}`, {
         method: 'PATCH',
         headers: {
@@ -63,11 +63,9 @@ export default function Todos() {
       if (!response.ok)
         throw new Error(`HTTP error! Status: ${response.status}`);
       const toggledTodo = await response.json();
-      console.log(toggledTodo);
       const toggledTodos = todos.map((t) =>
         t.todoId === todoId ? toggledTodo : t
       );
-      console.log(toggledTodos);
       setTodos(toggledTodos);
     } catch (error) {
       console.log(error.message);
