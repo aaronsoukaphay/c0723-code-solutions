@@ -51,23 +51,20 @@ app.post('/api/auth/sign-in', async (req, res, next) => {
         where "username" = $1
     `;
     const result = await db.query(sql, [username]);
-    const user = result.rows[0];
-    if (!user) throw new ClientError(401, 'invalid login');
-    const isMatching = await argon2.verify(user.hashedPassword, password);
+    const response = result.rows[0];
+    if (!response) throw new ClientError(401, 'invalid login');
+    const isMatching = await argon2.verify(response.hashedPassword, password);
     if (!isMatching) throw new ClientError(401, 'invalid login');
-    const payload = {
-      userId: user.userId,
+    const user = {
+      userId: response.userId,
       username,
     };
-    const token = jwt.sign(payload, process.env.TOKEN_SECRET);
-    const response = {
+    const token = jwt.sign(user, process.env.TOKEN_SECRET);
+    const userInfo = {
       token,
-      user: {
-        userId: payload.userId,
-        username: payload.username,
-      },
+      user,
     };
-    res.json(response);
+    res.json(userInfo);
     /* Query the database to find the "userId" and "hashedPassword" for the "username".
      * If no user is found,
      *   throw a 401: 'invalid login' error.
