@@ -33,14 +33,11 @@ app.post('/api/auth/sign-up', async (req, res, next) => {
     const sql = `
       insert into "users" ("username", "hashedPassword")
           values ($1, $2)
-          returning *
+          returning "userId", "username", "createdAt"
     `;
     const params = [username, hashedPassword];
     const result = await db.query(sql, params);
-    const userInfo = result.rows[0];
-    if (!userInfo)
-      throw new ClientError(500, 'user was not added, something went wrong');
-    res.status(201).json(userInfo);
+    res.status(201).json(result.rows[0]);
   } catch (err) {
     next(err);
   }
