@@ -7,7 +7,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What is the purpose of React "context"?
   to make information from the parent available to its children without explicitly passing it through props
 - What values can be stored in context?
-  application state, authentication data, api configurations, theme settings
+  anything
 - How do you create context and make it available to the components?
   create it with createContext()
   make context available to components by wrapping components in a context Provider and assigning it a value prop
