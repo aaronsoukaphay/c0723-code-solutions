@@ -9,7 +9,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - Why is it important to write unit tests?
   to make sure changes in one area of code don't break functionality somewhere else
 - What code should be tested with a unit test? What code is not well suited for unit tests?
-  any code that is not trivial. trivial code is not worth testing since it is easy to expect the results
+  test all the imported functions. try not to test the non imported functions.
 - What is Jest? What are some other popular JavaScript unit testing frameworks?
   Jest is a JavaScript unit testing framework.
   other popular JavaScript unit testing frameworks are JUnit, Selenium, Cucumber

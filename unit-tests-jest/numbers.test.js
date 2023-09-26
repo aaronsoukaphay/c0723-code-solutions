@@ -6,7 +6,7 @@ describe('evenNumbers', () => {
     const result = evenNumbers(numbers);
     expect(result).toEqual([4, 10, 0]);
   });
-  it('returns the even numbers where ', () => {
+  it('returns the even numbers where some elements are NaN', () => {
     const numbers = [1, 4, 'foo', 'bar', 0];
     const result = evenNumbers(numbers);
     expect(result).toEqual([4, 0]);

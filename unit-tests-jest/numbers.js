@@ -13,8 +13,7 @@ export function evenNumbers(numbers) {
  */
 export function toDollars(amount) {
   if (isNaN(amount)) throw new Error('amount must be a number');
-  const rounded = Math.round((amount + Number.EPSILON) * 100) / 100;
-  return `$${rounded}`;
+  return `$${amount.toFixed(2)}`;
 }
 
 /**
