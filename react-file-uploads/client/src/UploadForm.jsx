@@ -31,7 +31,7 @@ export default function UploadForm() {
       if (!response.ok) throw new Error('fetch Error');
       const upload = await response.json();
       console.log(upload);
-      setImage(upload.url);
+      setImage(upload);
     } catch (err) {
       console.log(err.message);
     }
@@ -67,8 +67,8 @@ export default function UploadForm() {
                 Upload
               </button>
             </div>
-            <img src={image} />
           </form>
+          {image && <img src={image.url} alt={image.url} />}
         </div>
       </div>
     </div>
